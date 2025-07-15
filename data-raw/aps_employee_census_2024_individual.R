@@ -110,7 +110,8 @@ message("Reading CSV file...")
 raw_aps_employee_census_2024_individual <- read_csv(
   file = temp_file,
   show_col_types = FALSE, # Suppress column type messages for cleaner output
-  na = COMMON_NA_STRINGS
+  na = COMMON_NA_STRINGS,
+  col_types = cols(.default = col_character())
 )
 
 
@@ -126,7 +127,6 @@ aps_employee_census_2024_individual <- raw_aps_employee_census_2024_individual |
     age_range = q2,
     classification = q4
   ) |>
-  mutate(across(everything(), as.character)) |>
 
   # Convert agency_size, gender, age_range and classification to factors
   mutate(
