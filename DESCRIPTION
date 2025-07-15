@@ -11,3 +11,11 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
 LazyData: true
+LazyDataCompression: xz
+Suggests: 
+    dplyr,
+    httr2,
+    janitor,
+    readr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
